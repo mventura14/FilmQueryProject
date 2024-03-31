@@ -57,6 +57,11 @@ public class FilmQueryApp {
 			case 2:
 				System.out.print("Please enter your Search: ");
 				String search = input.nextLine();
+
+				while (search.trim().isBlank()) {
+					System.out.print("Search cannot be blank. : ");
+					search = input.nextLine();
+				}
 				db.findFilmByKeyword(search);
 				break;
 			}
